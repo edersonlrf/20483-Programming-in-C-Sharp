@@ -159,15 +159,6 @@ namespace School
         // TODO: Exercise 1: Task 3c: create Edit student method
         private void EditStudent(Student student)
         {
-
-        }
-
-        // TODO: Exercise 1: Task 1b: If the user double-clicks a student, edit the details for that student
-        private void studentsList_MouseDoubleClick(object sender, MouseButtonEventArgs e)
-        {
-            // TODO: Exercise 1: Task 1a: Copy code for editing the details for that student
-            Student student = this.studentsList.SelectedItem as Student;
-
             // TODO: Exercise 1: Task 3d: Refactor as the EditStudent method
 
             // Use the StudentsForm to display and edit the details of the student
@@ -190,6 +181,15 @@ namespace School
                 // Enable saving (changes are not made permanent until they are written back to the database)
                 saveChanges.IsEnabled = true;
             }
+        }
+
+        // TODO: Exercise 1: Task 1b: If the user double-clicks a student, edit the details for that student
+        private void studentsList_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            // TODO: Exercise 1: Task 1a: Copy code for editing the details for that student
+            Student student = this.studentsList.SelectedItem as Student;
+
+            EditStudent(student);
         }
 
         // Save changes back to the database and make them permanent
