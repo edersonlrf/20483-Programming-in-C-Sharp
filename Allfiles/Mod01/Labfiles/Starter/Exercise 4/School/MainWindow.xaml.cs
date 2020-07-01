@@ -161,6 +161,8 @@ namespace School
             if (value != null)
             {
                 // TODO: Exercise 4: Task 2b: Convert the value provided into a DateTime value
+                DateTime studentDateOfBirth = (DateTime)value;
+
                 // TODO: Exercise 4: Task 2c: Work out the difference between the current date and the value provided
                 // TODO: Exercise 4: Task 2d: Convert this result into a number of years
                 // TODO: Exercise 4: Task 2e: Convert the number of years into a string and return it
