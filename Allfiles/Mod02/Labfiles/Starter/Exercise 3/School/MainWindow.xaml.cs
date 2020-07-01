@@ -9,6 +9,8 @@ using System.Windows.Input;
 using School.Data;
 
 // TODO: Exercise 3: Task 2a: Bring the System.Data and System.Data.Objects namespaces into scope
+using System.Data;
+using System.Data.Objects;
 
 namespace School
 {
