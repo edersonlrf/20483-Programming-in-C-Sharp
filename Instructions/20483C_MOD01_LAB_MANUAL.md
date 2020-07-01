@@ -42,7 +42,7 @@ Finally, you will run the application to verify that your code functions as expe
 2. Close File Explorer.
 3. Start Visual Studio and from the **[Repository Root]\\Allfiles\\Mod01\\Labfiles\\Starter\\Exercise1** folder, open the **School.sln** solution.
 4. In the code for the **MainWindow.xaml.cs** window, find the **studentsList_KeyDown** method.
-5. In this method, add a **switch** statement to detect whether the user has pressed Enter.  
+5. In this method, add a **switch** statement to detect whether the user has pressed Enter.
    The second argument passed to this method is a **KeyEventArgs** object named **e**. This object has a **Key** property which returns the keyboard key
    associated with the event. You can use this in conjunction with the **Key** enumeration to determine which key initiated the **KeyDown** event.
 6. If the user pressed Enter, store the selected student in a **Student** object variable.
@@ -63,19 +63,19 @@ Finally, you will run the application to verify that your code functions as expe
 #### Task 3: Display the StudentForm window and copy the updated student details entered back to the Student object
 
 1. At the end of the **case Key.Enter** block, display the **StudentForm** window by using the **ShowDialog** method of the form.
-2. If the user clicks **OK** in the **StudentForm** window, copy the updated student details from the **StudentForm** window back to the **Student** object.  
+2. If the user clicks **OK** in the **StudentForm** window, copy the updated student details from the **StudentForm** window back to the **Student** object.
    You can detect whether the user clicked the **OK** button by examining the return value of the **ShowDialog** method. If the **Value** property of this
-   is true, the user clicked **OK**, otherwise they clicked **Cancel**.  
+   is true, the user clicked **OK**, otherwise they clicked **Cancel**.
    You can use the **DateTime.Parse** method to convert the date of birth string from the text box to a **DateTime** type.
-3. If the user clicks **OK**, also enable the **Save Changes** button in the user interface.  
+3. If the user clicks **OK**, also enable the **Save Changes** button in the user interface.
    To enable an item in a user interface, set the **IsEnabled** property of the item to **true**.
 
 #### Task 4: Run the application and verify that the edit functionality works as expected
 
 1. Build the solution and resolve any compilation errors.
-2. Run the application and verify that it displays the initial list of students.  
+2. Run the application and verify that it displays the initial list of students.
    ![alt text](./Images/20483C_01_Lab1_StudentList.png "The initial student list")
-3. Edit the row for **Kevin Liu** and verify that the **Edit Student Details** window appears and displays the correct details:  
+3. Edit the row for **Kevin Liu** and verify that the **Edit Student Details** window appears and displays the correct details:
    ![alt text](./Images/20483C_01_Lab1_EditStudent.png "Edit Student Details form")
 4. Change the last name of **Kevin Liu** to **Cook** and verify that the updated data is copied back to the students list.
 5. Verify that the **Save Changes** button is now enabled.
@@ -172,7 +172,7 @@ Finally, you will run the application to verify that your code functions as expe
 
 #### Task 2: Prompt the user to confirm that they want to remove the selected student from the class
 
-1. If the user presses Delete, find the details of the student that the user has selected and display a message box showing the selected student’s name. Ask the user to confirm that they want to remove the student.  
+1. If the user presses Delete, find the details of the student that the user has selected and display a message box showing the selected student’s name. Ask the user to confirm that they want to remove the student.
    ![alt text](./Images/20483C_01_Lab1_RemoveStudent.png "Prompt to confirm the deletion of a student record.")
 
 #### Task 3: Remove the student and enable the user to save the changes
@@ -219,7 +219,7 @@ Then you will run the application to verify that the **Age** column now displays
 #### Task 3: Run the application and verify that the student’s age now appears correctly
 
 1. Build the solution and resolve any compilation errors.
-2. Run the application and verify that it displays the initial list of students, with their ages.  
+2. Run the application and verify that it displays the initial list of students, with their ages.
    ![alt text](./Images/20483C_01_Lab1_StudentListAges.png "The student list displaying their ages.")
 3. Add yourself as a student and verify that your age displays correctly in the student list.
 4. Close the application.
