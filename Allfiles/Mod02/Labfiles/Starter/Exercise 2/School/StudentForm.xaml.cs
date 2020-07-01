@@ -21,6 +21,12 @@ namespace School
         private void ok_Click(object sender, RoutedEventArgs e)
         {
             // TODO: Exercise 2: Task 2a: Check that the user has provided a first name
+            if (String.IsNullOrEmpty(this.firstName.Text))
+            {
+                MessageBox.Show("The student must have a first name", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
+            }
+
             // TODO: Exercise 2: Task 2b: Check that the user has provided a last name
             // TODO: Exercise 2: Task 3a: Check that the user has entered a valid date for the date of birth
             // TODO: Exercise 2: Task 3b: Verify that the student is at least 5 years old
