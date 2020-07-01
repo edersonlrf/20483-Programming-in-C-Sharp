@@ -164,6 +164,8 @@ namespace School
                 DateTime studentDateOfBirth = (DateTime)value;
 
                 // TODO: Exercise 4: Task 2c: Work out the difference between the current date and the value provided
+                TimeSpan difference = DateTime.Now.Subtract(studentDateOfBirth);
+
                 // TODO: Exercise 4: Task 2d: Convert this result into a number of years
                 // TODO: Exercise 4: Task 2e: Convert the number of years into a string and return it
             }
