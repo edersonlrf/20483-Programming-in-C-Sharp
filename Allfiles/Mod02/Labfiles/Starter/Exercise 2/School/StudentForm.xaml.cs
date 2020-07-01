@@ -44,6 +44,13 @@ namespace School
             }
 
             // TODO: Exercise 2: Task 3b: Verify that the student is at least 5 years old
+            TimeSpan age = DateTime.Now.Subtract(result);
+
+            if (age.Days / 365.25 < 5)
+            {
+                MessageBox.Show("The student must be at least 5 years old", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
+            }
 
             // Indicate that the data is valid
             this.DialogResult = true;
