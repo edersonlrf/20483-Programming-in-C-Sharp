@@ -76,11 +76,13 @@ namespace School
                     // TODO: Exercise 1: Task 3a: Display the form
                     if (sf.ShowDialog().Value)
                     {
+                        // TODO: Exercise 1: Task 3b: When the user closes the form, copy the details back to the student
+                        student.FirstName = sf.firstName.Text;
+                        student.LastName = sf.lastName.Text;
+                        student.DateOfBirth = DateTime.ParseExact(sf.dateOfBirth.Text, "MM/dd/yyyy", CultureInfo.InvariantCulture);
 
+                        // TODO: Exercise 1: Task 3c: Enable saving (changes are not made permanent until they are written back to the database)
                     }
-
-                    // TODO: Exercise 1: Task 3b: When the user closes the form, copy the details back to the student
-                    // TODO: Exercise 1: Task 3c: Enable saving (changes are not made permanent until they are written back to the database)
 
                     break;
             }
