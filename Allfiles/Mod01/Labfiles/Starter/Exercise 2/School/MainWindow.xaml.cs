@@ -106,6 +106,8 @@ namespace School
                             this.teacher.Students.Add(newStudent);
 
                             // TODO: Exercise 2: Task 4b: Add the student to the list displayed on the form
+                            this.studentsInfo.Add(newStudent);
+
                             // TODO: Exercise 2: Task 4c: Enable saving (changes are not made permanent until they are written back to the database)
                         }
 
