@@ -109,6 +109,7 @@ namespace School
                             this.studentsInfo.Add(newStudent);
 
                             // TODO: Exercise 2: Task 4c: Enable saving (changes are not made permanent until they are written back to the database)
+                            saveChanges.IsEnabled = true;
                         }
 
                         break;
