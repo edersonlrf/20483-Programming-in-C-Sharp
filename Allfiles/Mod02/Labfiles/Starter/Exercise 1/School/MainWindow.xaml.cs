@@ -157,8 +157,10 @@ namespace School
         }
 
         // TODO: Exercise 1: Task 3c: create Edit student method
+        private void EditStudent(Student student)
+        {
 
-
+        }
 
         // TODO: Exercise 1: Task 1b: If the user double-clicks a student, edit the details for that student
         private void studentsList_MouseDoubleClick(object sender, MouseButtonEventArgs e)
