@@ -168,6 +168,12 @@ namespace School
         private void saveChanges_Click(object sender, RoutedEventArgs e)
         {
             // TODO: Exercise 3: Task 2b: Save the changes by calling the SaveChanges method of the schoolContext object
+            // Save the changes
+            this.schoolContext.SaveChanges();
+
+            // Disable the Save button (it will be enabled if the user makes more changes)
+            saveChanges.IsEnabled = false;
+
             // TODO: Exercise 3: Task 3a: If an OptimisticConcurrencyException occurs then another user has changed the same students earlier, then overwrite their changes with the new data (see the lab instructions for details)
             // TODO: Exercise 3: Task 3b: If an UpdateException occurs then report the error to the user and rollback (see the lab instructions for details)
             // TODO: Exercise 3: Task 3c: If some other sort of error has occurs, report the error to the user and retain the data so the user can try again - the error may be transitory (see the lab instructions for details)
