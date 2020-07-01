@@ -103,9 +103,12 @@ namespace School
                             newStudent.DateOfBirth = DateTime.ParseExact(sf.dateOfBirth.Text, "MM/dd/yyyy", CultureInfo.InvariantCulture);
 
                             // TODO: Exercise 2: Task 4a: Assign the new student to the current teacher
+                            this.teacher.Students.Add(newStudent);
+
                             // TODO: Exercise 2: Task 4b: Add the student to the list displayed on the form
                             // TODO: Exercise 2: Task 4c: Enable saving (changes are not made permanent until they are written back to the database)
                         }
+
                         break;
             }
         }
