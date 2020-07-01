@@ -150,7 +150,31 @@ namespace School
         // TODO: Exercise 1: Task 1b: If the user double-clicks a student, edit the details for that student
         private void studentsList_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
+            // TODO: Exercise 1: Task 1a: Copy code for editing the details for that student
+            Student student = this.studentsList.SelectedItem as Student;
 
+            // TODO: Exercise 1: Task 3d: Refactor as the EditStudent method
+
+            // Use the StudentsForm to display and edit the details of the student
+            StudentForm sf = new StudentForm();
+
+            // Set the title of the form and populate the fields on the form with the details of the student           
+            sf.Title = "Edit Student Details";
+            sf.firstName.Text = student.FirstName;
+            sf.lastName.Text = student.LastName;
+            sf.dateOfBirth.Text = student.DateOfBirth.ToString("d"); // Format the date to omit the time element
+
+            // Display the form
+            if (sf.ShowDialog().Value)
+            {
+                // When the user closes the form, copy the details back to the student
+                student.FirstName = sf.firstName.Text;
+                student.LastName = sf.lastName.Text;
+                student.DateOfBirth = DateTime.Parse(sf.dateOfBirth.Text);
+
+                // Enable saving (changes are not made permanent until they are written back to the database)
+                saveChanges.IsEnabled = true;
+            }
         }
 
         // Save changes back to the database and make them permanent
