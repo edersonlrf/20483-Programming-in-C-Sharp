@@ -127,7 +127,12 @@ namespace School
                     );
 
                     // TODO: Exercise 3: Task 3a: If the user clicked Yes, remove the student from the database
-                    // TODO: Exercise 3: Task 3b: Enable saving (changes are not made permanent until they are written back to the database)
+                    if (response == MessageBoxResult.Yes)
+                    {
+                        this.schoolContext.Students.DeleteObject(student);
+
+                        // TODO: Exercise 3: Task 3b: Enable saving (changes are not made permanent until they are written back to the database)
+                    }
 
                     break;
             }
