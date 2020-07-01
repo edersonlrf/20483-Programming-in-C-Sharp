@@ -94,12 +94,17 @@ namespace School
                         sf.Title = "New Student for Class " + teacher.Class;
 
                         // TODO: Exercise 2: Task 3a: Display the form and get the details of the new student
+                        if (sf.ShowDialog().Value)
+                        {
+                            
+                        }
+
                         // TODO: Exercise 2: Task 3b: When the user closes the form, retrieve the details of the student from the form and use them to create a new Student object
                         // TODO: Exercise 2: Task 4a: Assign the new student to the current teacher
                         // TODO: Exercise 2: Task 4b: Add the student to the list displayed on the form
                         // TODO: Exercise 2: Task 4c: Enable saving (changes are not made permanent until they are written back to the database)
 
-                    break;
+                        break;
             }
         }
 
