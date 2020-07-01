@@ -132,6 +132,7 @@ namespace School
                         this.schoolContext.Students.DeleteObject(student);
 
                         // TODO: Exercise 3: Task 3b: Enable saving (changes are not made permanent until they are written back to the database)
+                        saveChanges.IsEnabled = true;
                     }
 
                     break;
