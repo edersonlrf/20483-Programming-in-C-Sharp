@@ -118,6 +118,14 @@ namespace School
                     student = this.studentsList.SelectedItem as Student;
 
                     // TODO: Exercise 3: Task 2a: Prompt the user to confirm that the student should be removed
+                    MessageBoxResult response = MessageBox.Show(
+                        string.Format("Remove {0}", student.FirstName + " " + student.LastName),
+                        "Confirm",
+                        MessageBoxButton.YesNo,
+                        MessageBoxImage.Question,
+                        MessageBoxResult.No
+                    );
+
                     // TODO: Exercise 3: Task 3a: If the user clicked Yes, remove the student from the database
                     // TODO: Exercise 3: Task 3b: Enable saving (changes are not made permanent until they are written back to the database)
 
