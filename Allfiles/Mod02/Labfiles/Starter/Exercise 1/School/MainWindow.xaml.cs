@@ -89,35 +89,9 @@ namespace School
                     break;
 
                 // If the user pressed Insert, add a new student
-                case Key.Insert: 
+                case Key.Insert:
 
-                    // TODO: Exercise 1: Task 3a: Refactor as the addNewStudent method
-
-                    // Use the StudentsForm to get the details of the student from the user
-                    sf = new StudentForm();
-
-                    // Set the title of the form to indicate which class the student will be added to (the class for the currently selected teacher)
-                    sf.Title = "New Student for Class " + teacher.Class;
-
-                    // Display the form and get the details of the new student
-                    if (sf.ShowDialog().Value)
-                    {
-                        // When the user closes the form, retrieve the details of the student from the form
-                        // and use them to create a new Student object
-                        Student newStudent = new Student();
-                        newStudent.FirstName = sf.firstName.Text;
-                        newStudent.LastName = sf.lastName.Text;
-                        newStudent.DateOfBirth = DateTime.Parse(sf.dateOfBirth.Text);
-
-                        // Assign the new student to the current teacher
-                        this.teacher.Students.Add(newStudent);
-
-                        // Add the student to the list displayed on the form
-                        this.studentsInfo.Add(newStudent);
-
-                        // Enable saving (changes are not made permanent until they are written back to the database)
-                        saveChanges.IsEnabled = true;
-                    }
+                    sf = AddNewStudent();
                     break;
 
                 // If the user pressed Delete, remove the currently selected student
@@ -141,6 +115,39 @@ namespace School
                     }
                     break;
             }
+        }
+
+        private StudentForm AddNewStudent()
+        {
+            // TODO: Exercise 1: Task 3a: Refactor as the addNewStudent method
+
+            // Use the StudentsForm to get the details of the student from the user
+            StudentForm sf = new StudentForm();
+
+            // Set the title of the form to indicate which class the student will be added to (the class for the currently selected teacher)
+            sf.Title = "New Student for Class " + teacher.Class;
+
+            // Display the form and get the details of the new student
+            if (sf.ShowDialog().Value)
+            {
+                // When the user closes the form, retrieve the details of the student from the form
+                // and use them to create a new Student object
+                Student newStudent = new Student();
+                newStudent.FirstName = sf.firstName.Text;
+                newStudent.LastName = sf.lastName.Text;
+                newStudent.DateOfBirth = DateTime.Parse(sf.dateOfBirth.Text);
+
+                // Assign the new student to the current teacher
+                this.teacher.Students.Add(newStudent);
+
+                // Add the student to the list displayed on the form
+                this.studentsInfo.Add(newStudent);
+
+                // Enable saving (changes are not made permanent until they are written back to the database)
+                saveChanges.IsEnabled = true;
+            }
+
+            return sf;
         }
 
         // TODO: Exercise 1: Task 3c: create Edit student method
