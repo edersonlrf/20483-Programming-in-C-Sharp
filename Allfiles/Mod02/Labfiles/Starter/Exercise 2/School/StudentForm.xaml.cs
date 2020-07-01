@@ -35,6 +35,14 @@ namespace School
             }
 
             // TODO: Exercise 2: Task 3a: Check that the user has entered a valid date for the date of birth
+            DateTime result;
+
+            if (!DateTime.TryParse(this.dateOfBirth.Text, out result))
+            {
+                MessageBox.Show("The date of birth must be a valid date", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                return;
+            }
+
             // TODO: Exercise 2: Task 3b: Verify that the student is at least 5 years old
 
             // Indicate that the data is valid
