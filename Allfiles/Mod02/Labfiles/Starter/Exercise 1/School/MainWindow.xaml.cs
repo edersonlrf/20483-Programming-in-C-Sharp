@@ -97,23 +97,29 @@ namespace School
                 // If the user pressed Delete, remove the currently selected student
                 case Key.Delete: student = this.studentsList.SelectedItem as Student;
 
-                    // TODO: Exercise 1: Task 3b: Refactor as the removeStudent method
+                    RemoveStudent(student);
 
-                    // Prompt the user to confirm that the student should be removed
-                    MessageBoxResult response = MessageBox.Show(
-                        String.Format("Remove {0}", student.FirstName + " " + student.LastName),
-                        "Confirm", MessageBoxButton.YesNo, MessageBoxImage.Question,
-                        MessageBoxResult.No);
-
-                    // If the user clicked Yes, remove the student from the database
-                    if (response == MessageBoxResult.Yes)
-                    {
-                        this.schoolContext.Students.DeleteObject(student);
-
-                        // Enable saving (changes are not made permanent until they are written back to the database)
-                        saveChanges.IsEnabled = true;
-                    }
                     break;
+            }
+        }
+
+        private void RemoveStudent(Student student)
+        {
+            // TODO: Exercise 1: Task 3b: Refactor as the removeStudent method
+
+            // Prompt the user to confirm that the student should be removed
+            MessageBoxResult response = MessageBox.Show(
+                String.Format("Remove {0}", student.FirstName + " " + student.LastName),
+                "Confirm", MessageBoxButton.YesNo, MessageBoxImage.Question,
+                MessageBoxResult.No);
+
+            // If the user clicked Yes, remove the student from the database
+            if (response == MessageBoxResult.Yes)
+            {
+                this.schoolContext.Students.DeleteObject(student);
+
+                // Enable saving (changes are not made permanent until they are written back to the database)
+                saveChanges.IsEnabled = true;
             }
         }
 
