@@ -170,8 +170,12 @@ namespace School
                 int ageInYears = (int)(difference.Days / 365.25);
 
                 // TODO: Exercise 4: Task 2e: Convert the number of years into a string and return it
+                return ageInYears.ToString();
             }
-            return "";
+            else
+            {
+                return "";
+            }
         }
 
         #region Predefined code
