@@ -96,7 +96,8 @@ namespace GradesPrototype
         // Set the global context to the name of the student and call the GotoStudentProfile method to display the details of the student
         private void studentsPage_StudentSelected(object sender, StudentEventArgs e)
         {
-
+            SessionContext.CurrentStudent = e.Child;
+            GotoStudentProfile();
         }
         #endregion
 
