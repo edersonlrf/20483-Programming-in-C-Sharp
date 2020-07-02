@@ -49,7 +49,17 @@ namespace GradesPrototype.Views
         // The MainWindow window subscribes to this event and displays the view for a single student
         private void Student_Click(object sender, RoutedEventArgs e)
         {
-
+            Button itemClicked = sender as Button;
+            if (itemClicked != null)
+            {
+                // Find out which student was clicked - the Tag property of the button  contains the name
+                string studentName = (string)itemClicked.Tag;
+                if (StudentSelected != null)
+                {
+                    // Raise the StudentSelected event (handled by MainWindow) to display the   details for this student
+                    StudentSelected(sender, new StudentEventArgs(studentName));
+                }
+            }
         }
         #endregion
     }
