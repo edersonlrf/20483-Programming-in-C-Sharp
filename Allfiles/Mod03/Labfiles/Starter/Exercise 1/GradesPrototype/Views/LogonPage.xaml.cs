@@ -36,6 +36,24 @@ namespace GradesPrototype.Views
         #region Logon Validation
 
         // TODO: Exercise 1: Task 2b: Implement the Logon_Click event handler for the Logon button
+        private void Logon_Click(object sender, RoutedEventArgs e)
+        {
+            // Save the username and role (type of user) specified on the form in the   global context
+            SessionContext.UserName = username.Text;
+            SessionContext.UserRole = (bool)userrole.IsChecked ? Role.Teacher : Role.Student;
+
+            // If the role is Student, set the CurrentStudent property in the global    context to a dummy student; Eric Gruber
+            if (SessionContext.UserRole == Role.Student)
+            {
+                SessionContext.CurrentStudent = "Eric Gruber";
+            }
+
+            // Raise the LogonSuccess event
+            if (LogonSuccess != null)
+            {
+                LogonSuccess(this, null);
+            }
+        }
         // Simulate logging on (no validation or authentication performed yet)
 
         #endregion
