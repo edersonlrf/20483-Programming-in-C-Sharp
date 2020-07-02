@@ -95,7 +95,24 @@ namespace GradesPrototype
         // TODO: Exercise 1: Task 4a: Update the display for the logged on user (student or teacher)
         private void Refresh()
         {
- 
+            switch (SessionContext.UserRole)
+            {
+                case Role.Student:
+                    // Display the student name in the banner at the top of the page
+                    txtName.Text = string.Format("Welcome {0}", SessionContext.UserName);
+
+                    // Display the details for the current student
+                    GotoStudentProfile();
+                    break;
+
+                case Role.Teacher:
+                    // Display the teacher name in the banner at the top of the page
+                    txtName.Text = string.Format("Welcome {0}", SessionContext.UserName);
+
+                    // Display the list of students for the teacher
+                    GotoStudentsPage();
+                    break;
+            }
         }
         #endregion
     }
