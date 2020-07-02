@@ -49,7 +49,12 @@ namespace GradesPrototype
         // TODO: Exercise 1: Task 4b: Display the details for a single student
         public void GotoStudentProfile()
         {
+            // Hide the list of students
+            studentsPage.Visibility = Visibility.Collapsed;
 
+            // Display the view for a single student
+            studentProfile.Visibility = Visibility.Visible;
+            studentProfile.Refresh();
         }
         #endregion
 
