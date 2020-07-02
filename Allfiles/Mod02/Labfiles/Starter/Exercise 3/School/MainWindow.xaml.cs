@@ -191,8 +191,13 @@ namespace School
                 MessageBox.Show(uEx.InnerException.Message, "Error saving changes");
                 this.schoolContext.Refresh(RefreshMode.StoreWins, schoolContext.Students);
             }
-
             // TODO: Exercise 3: Task 3c: If some other sort of error has occurs, report the error to the user and retain the data so the user can try again - the error may be transitory (see the lab instructions for details)
+            catch (Exception ex)
+            {
+                // If some other exception occurs, report it to the user
+                MessageBox.Show(ex.Message, "Error saving changes");
+                this.schoolContext.Refresh(RefreshMode.ClientWins, schoolContext.Students);
+            }
         }
     }
 
