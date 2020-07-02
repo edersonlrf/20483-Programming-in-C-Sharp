@@ -42,8 +42,13 @@ namespace GradesPrototype
 
         // TODO: Exercise 1: Task 4c: Display the list of students
         private void GotoStudentsPage()
-        {            
+        {
+            // Hide the view for a single student (if it is visible)
+            studentProfile.Visibility = Visibility.Collapsed;
 
+            // Display the list of students
+            studentsPage.Visibility = Visibility.Visible;
+            studentsPage.Refresh();
         }
 
         // TODO: Exercise 1: Task 4b: Display the details for a single student
